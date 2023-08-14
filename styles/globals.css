@@ -4,22 +4,28 @@ body {
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  line-height: 1.6;
+  font-size: 18px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+a {
+  color: #0070f3;
+  text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: block;
+}
+/* 
 h1,
 h2,
 p,
@@ -35,4 +41,4 @@ ul {
 button {
   padding: 0.5rem 1rem;
   font-weight: bold;
-}
+} */

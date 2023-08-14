@@ -6,8 +6,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "volta": {
+    "node": "18.17.1",
+    "npm": "9.6.7"
   }
 }
