@@ -4,25 +4,17 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import sanitizeHtml from "sanitize-html";
+import { GetStaticPaths, GetStaticProps } from "next";
 
-export async function getStaticPaths() {
-  const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
+type PostData = {
+  postData: {
+    title: string;
+    date: string;
+    contentHtml: string;
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
-  return {
-    props: {
-      postData,
-    },
-  };
-}
-
-export default function Post({ postData }) {
+export default function Post({ postData }: PostData) {
   const cleanContentHtml = sanitizeHtml(postData.contentHtml);
 
   return (
@@ -40,3 +32,20 @@ export default function Post({ postData }) {
     </Layout>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = getAllPostIds();
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postData = await getPostData(params?.id as string);
+  return {
+    props: {
+      postData,
+    },
+  };
+};
