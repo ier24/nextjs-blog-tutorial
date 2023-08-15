@@ -37,6 +37,7 @@ export default function Layout({ children, home }) {
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <div>こんにちは。</div>
           </>
         ) : (
           <>
@@ -55,6 +56,7 @@ export default function Layout({ children, home }) {
                 {name}
               </Link>
             </h2>
+            <div>こんにちは。</div>
           </>
         )}
       </header>
